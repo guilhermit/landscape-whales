@@ -1,0 +1,49 @@
+// Landscape Collection | MIT License
+// Copyright (C) 2020 Guilherme Oliveira
+
+.clouds
+	position: relative
+	left: -500px
+	z-index: 10000
+
+	.c-parts
+		position: absolute
+		background-color: $cloud-color
+
+	.part1
+		@extend .c-parts
+		@include set-part(60px, 60px, null, 18px, 50%)
+
+	.part2
+		@extend .c-parts
+		@include set-part(40px, 40px, 33px, null, 45% 0 0 45%)
+
+	.part3
+		@extend .c-parts
+		@include set-part(45px, 45px, 22px, 67px, 50%)
+
+	.part4
+		@extend .c-parts
+		@include set-part(30px, 30px, 43px, 102px, 0 45% 45% 0)
+
+	.part5
+		@extend .c-parts
+		@include set-part(80px, 30px, 43px, 28px)
+
+
+.cloud1
+	@extend .clouds
+	top: 35px
+	animation: cloud-move 50s linear 5s infinite
+
+.cloud2
+	@extend .clouds
+	top: 163px
+	transform: scale(.8)
+	animation: cloud-move 30s linear 3s infinite
+
+.cloud3
+	@extend .clouds
+	top: 62px
+	transform: scale(1.3)
+	animation: cloud-move 80s linear 1s infinite 

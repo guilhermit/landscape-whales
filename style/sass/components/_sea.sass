@@ -1,0 +1,71 @@
+// Landscape Collection | MIT License
+// Copyright (C) 2020 Guilherme Oliveira
+
+.sea
+	position: relative
+	left: 0
+
+	.sea-parts
+		position: absolute
+		transform: rotate(50deg)
+		@include set-part(150px, 400px, null, null, 100% 0 0 0)
+		@include blur(.5px)
+		animation: waves 3s ease infinite alternate
+
+	@for $i from 0 through 5
+		.part#{$i + 1}
+			@extend .sea-parts
+			left: ( $i * 130px)
+			border-top: 8px solid rgba(228, 245, 238, 0.5)
+
+.sea-plane1
+	@extend .sea
+	top: 452px
+	left: -117px
+	z-index: 1000000
+
+	& > .sea-parts
+		@include gradient($sea-color1, $sea-color2)
+		animation-duration: 4s
+		animation-delay: 1s
+
+.sea-plane2
+	@extend .sea
+	top: 413px
+	left: -205px
+	z-index: 100000
+
+	& > .sea-parts
+		@include gradient($sea-color2, $sea-color3)
+		animation-duration: 5s
+		animation-delay: .5s	
+
+.sea-plane3
+	@extend .sea
+	top: 372px
+	left: -214px
+	z-index: 1000
+
+	& > .sea-parts
+		@include gradient($sea-color3, $sea-color4)
+		animation-duration: 2.5s
+
+.sea-plane4
+	@extend .sea
+	top: 339px
+	left: -159px
+	z-index: 100
+
+	& > .sea-parts
+		@include gradient($sea-color4, $sea-color5)
+		animation-duration: 4.5s
+		animation-delay: 1.5s
+	
+.sea-plane5
+	@extend .sea
+	top: 305px
+	left: -159px
+	z-index: 10
+
+	& > .sea-parts
+		@include gradient($sea-color5, $sea-color6)
