@@ -9,13 +9,15 @@
 
 @keyframes waves
 	from
-		transform: rotate(50deg) scaleX(1) translate3d(0, 0, 0)
-		border-width: 7px
-		border-color: rgba(255, 255, 255, .5)
+		@include transform(rotate(50deg) scaleX(1) translate3d(0, 0, 0))
+		border:
+			width: 7px
+			color: rgba(255, 255, 255, .5)
 	to
-		transform: rotate(50deg) scaleX(1.6) translate3d(5px, 5px, 0)
-		border-width: 3px
-		border-color: rgba(255, 255, 255, .3)
+		@include transform(rotate(50deg) scaleX(1.6) translate3d(5px, 5px, 0))
+		border:
+			width: 3px
+			color: rgba(255, 255, 255, .3)
 
 @keyframes whale-float
 	from
@@ -31,14 +33,14 @@
 
 @keyframes whale-blink
 	0%
-		opacity: 1
+		@include opacity(1)
 	96%
-		opacity: 1
+		@include opacity(1)
 	100%
-		opacity: 0
+		@include opacity(0)
 
 @keyframes whale-swim
 	from
-		transform: rotate(-25deg) rotateZ(0) translateX(0)
+		@include transform(rotate(-25deg) rotateZ(0) translateX(0))
 	to
-		transform: rotate(-25deg) rotateZ(-20deg) translateX(5px)
+		@include transform(rotate(-25deg) rotateZ(-20deg) translateX(5px))

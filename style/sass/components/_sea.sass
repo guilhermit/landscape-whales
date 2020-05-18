@@ -7,8 +7,8 @@
 
 	.sea-parts
 		position: absolute
-		transform: rotate(50deg)
 		@include set-part(150px, 400px, null, null, 100% 0 0 0)
+		@include transform(rotate(50deg))
 		@include blur(.5px)
 		animation: waves 3s ease infinite alternate
 

@@ -6,11 +6,11 @@
 	z-index: 100
 	top: 430px
 	left: 107px
-	transform: rotate(10deg)
+	@include transform(rotate(10deg))
 	animation: whale-float 2s ease-in-out infinite alternate
 
 	&.child
-		transform: rotate(10deg) scale(.5)
+		@include transform(rotate(10deg) scale(.5))
 		top: 461px
 		left: 187px
 		animation: whale-child-float 2s .2s ease-in-out infinite alternate 
@@ -22,7 +22,7 @@
 			background-color: lighten($whale-color1, 15)
 
 		.tail3 .concave:before
-			box-shadow: 0 0 0 35px lighten($whale-color1, 15)
+			@include box-shadow(0, 0, 0, 35px, lighten($whale-color1, 15))
 
 		.flipper
 			animation-delay: .8s
@@ -94,8 +94,8 @@
 		position: absolute
 		@include set-part(20px, 4px, 52px, 69px, 20%)
 		@include blur(3px)
+		@include transform(rotate(18deg))
 		background-color: rgba(255, 60, 60, 0.5)
-		transform: rotate(18deg)
 		z-index: 10011
 
 	.tail1
@@ -105,12 +105,12 @@
 	.tail2
 		@extend .parts
 		@include set-part(40px, 90px, -47px, 249px, 40% 80% 40% 0)
-		transform: rotate(10deg)
+		@include transform(rotate(10deg))
 
 	.tail3
 		position: absolute
 		@include set-part(60px, null, -33px, 214px)
-		transform: rotate(129deg)
+		@include transform(rotate(129deg))
 		overflow: hidden
 		padding: 20px 0
 
@@ -121,15 +121,15 @@
 				position: absolute
 				content: ""
 				height: 85px
-				box-shadow: 0 0 0 35px $whale-color1
-				border-radius: 100%
+				@include box-shadow(0, 0, 0, 35px, $whale-color1)
+				@include border-radius(100%)
 				right: -20%
 				left: -20%
 
 	.tail4
 		@extend .parts
 		@include set-part(37px, 70px, -51px, 250px, 0% 80% 40% 0)
-		transform: rotate(8deg)
+		@include transform(rotate(8deg))
 
 	.tail-end
 		position: absolute
@@ -148,8 +148,7 @@
 	.flipper
 		position: absolute
 		@include set-part(50px, 75px, 50px, 162px, 5% 50% 20% 100%)
-		transform: rotate(-25deg)
+		@include transform(rotate(-25deg))
 		background-color: darken($whale-color1, 15)
 		z-index: 10100
 		animation: whale-swim 2s .3s ease infinite alternate
-

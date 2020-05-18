@@ -4,17 +4,24 @@
 body
 	width: 100%
 	height: 100vh
-	overflow-y: hidden
+	min-height: 620px
 	@include gradient($sky-bottom-color, $sky-top-color)
-	@include no-select()
+	@include no-select
 
 main
 	position: relative
-	width: 100%
-	height: 100vh
-	display: grid
-	justify-items: center
+	width: inherit
+	height: inherit
+	min-height: inherit
+	display: flex
+	flex-direction: column
+	justify-content: center
 	align-items: center
+
+@media screen\0 //IE 8,9 and 10
+	.canvas,
+	.credits
+		margin: 0 auto !important 
 
 .canvas
 	display: block
@@ -23,24 +30,28 @@ main
 	height: 600px
 	background-color: #f3f3f3
 	@include box-shadow(0, 0, 30px, 3px, rgba(0, 0, 0, .5))
-	transform: scale(.9)
+	@include transform(scale(.9))
 	overflow: hidden
 
 .landscape-collection
 	position: absolute
-	z-index: 10000000
 	text-align: center
 	left: 0
 	right: 0
 	bottom: 10px
 	margin: auto
+	z-index: 10000000
 
 	.text
-		font-family: $font-collection
-		font-size: 40px
+		font:
+			family: $font-collection
+			size: 40px
 		color: white
 	
 .credits
+	display: block
+	position: relative
+	text-align: center
 	font:
 		family: $font-credits
 		weight: bold

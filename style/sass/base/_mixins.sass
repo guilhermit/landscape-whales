@@ -6,6 +6,17 @@
 	height: $height
 	top: $top
 	left: $left
+	@include border-radius($radius)
+
+@mixin transform($transforms)
+	-webkit-transform: $transforms
+	-moz-transform: $transforms
+	-ms-transform: $transforms
+	transform: $transforms
+
+@mixin border-radius($radius)
+	-webkit-border-radius: $radius
+	-moz-border-radius: $radius
 	border-radius: $radius
 
 @mixin no-select
@@ -46,3 +57,8 @@
 	-o-filter: blur($radius)
 	-ms-filter: blur($radius)
 	filter: blur($radius)
+
+@mixin opacity($opacity)
+	filter: alpha(opacity=$opacity*100)
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=#{$opacity*100})
+	opacity: $opacity
